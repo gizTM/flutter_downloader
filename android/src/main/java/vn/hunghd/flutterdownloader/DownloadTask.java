@@ -15,9 +15,11 @@ public class DownloadTask {
     boolean openFileFromNotification;
     long timeCreated;
     boolean saveInPublicStorage;
+    String notificationTitle;
 
     DownloadTask(int primaryId, String taskId, int status, int progress, String url, String filename, String savedDir,
-                 String headers, String mimeType, boolean resumable, boolean showNotification, boolean openFileFromNotification, long timeCreated, boolean saveInPublicStorage) {
+                 String headers, String mimeType, boolean resumable, boolean showNotification, boolean openFileFromNotification, 
+                 long timeCreated, boolean saveInPublicStorage, String notificationTitle) {
         this.primaryId = primaryId;
         this.taskId = taskId;
         this.status = status;
@@ -32,10 +34,11 @@ public class DownloadTask {
         this.openFileFromNotification = openFileFromNotification;
         this.timeCreated = timeCreated;
         this.saveInPublicStorage = saveInPublicStorage;
+        this.notificationTitle = notificationTitle;
     }
 
     @Override
     public String toString() {
-        return "DownloadTask{taskId=" + taskId + ",status=" + status + ",progress=" + progress + ",url=" + url + ",filename=" + filename + ",savedDir=" + savedDir + ",headers=" + headers + ", saveInPublicStorage= " + saveInPublicStorage + "}";
+        return "DownloadTask{taskId=" + taskId + ",status=" + status + ",progress=" + progress + ",url=" + url + ",filename=" + filename + ",savedDir=" + savedDir + ",headers=" + headers + ", saveInPublicStorage= " + saveInPublicStorage + ", notificationTitle= " + notificationTitle + "}";
     }
 }

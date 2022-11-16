@@ -27,7 +27,8 @@ public class TaskDbHelper extends SQLiteOpenHelper {
                     TaskEntry.COLUMN_NAME_SHOW_NOTIFICATION + " TINYINT DEFAULT 0, " +
                     TaskEntry.COLUMN_NAME_OPEN_FILE_FROM_NOTIFICATION + " TINYINT DEFAULT 0, " +
                     TaskEntry.COLUMN_NAME_TIME_CREATED + " INTEGER DEFAULT 0, " +
-                    TaskEntry.COLUMN_SAVE_IN_PUBLIC_STORAGE + " TINYINT DEFAULT 0"
+                    TaskEntry.COLUMN_SAVE_IN_PUBLIC_STORAGE + " TINYINT DEFAULT 0, " +
+                    TaskEntry.COLUMN_NAME_NOTIFICATION_TITLE + " TEXT"
                     + ")";
 
     private static final String SQL_DELETE_ENTRIES =
