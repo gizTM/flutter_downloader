@@ -173,10 +173,11 @@ public class DownloadWorker extends Worker implements MethodChannel.MethodCallHa
 
         String url = getInputData().getString(ARG_URL);
         String filename = getInputData().getString(ARG_FILE_NAME);
+        String notificationTitle = getInputData().getString(ARG_NOTIFICATION_TITLE);
 
         DownloadTask task = taskDao.loadTask(getId().toString());
         if (task != null && task.status == DownloadStatus.ENQUEUED) {
-            updateNotification(context, filename == null ? url : filename, DownloadStatus.CANCELED, -1, null, true);
+            updateNotification(context, filename == null ? url : filename, DownloadStatus.CANCELED, -1, null, true, notificationTitle);
             taskDao.updateTask(getId().toString(), DownloadStatus.CANCELED, lastProgress);
         }
     }
